@@ -123,7 +123,7 @@ var sadCatSVG = '<svg width="180" height="180" viewBox="0 0 200 200">' +
 '</svg>';
 
 // 显示猫咪反应
-function showCatReaction(isGood) {
+function showCatReaction(isGood, callback) {
   catReactionInner.innerHTML = isGood ? happyCatSVG : sadCatSVG;
   catReaction.classList.remove('fade-out');
   catReaction.classList.add('show');
@@ -131,6 +131,7 @@ function showCatReaction(isGood) {
     catReaction.classList.add('fade-out');
     setTimeout(function() {
       catReaction.classList.remove('show', 'fade-out');
+      if (callback) callback();
     }, 300);
   }, 800);
 }
@@ -261,19 +262,20 @@ exploreBtn.addEventListener('click', function() {
   }
   var prize = drawPrize();
   var good = isGoodPrize(prize);
-  showCatReaction(good);
-  if (prize.rarity === '神秘') {
-    mysteryImage.src = prize.image;
-    mysteryName.textContent = prize.name;
-    mysteryModal.classList.add('show');
-    spawnParticles();
-    particleTimer = setInterval(spawnParticles, 3000);
-  } else {
-    prizeImage.src = prize.image;
-    prizeName.textContent = prize.name;
-    prizeRarity.textContent = prize.rarity;
-    prizeModal.classList.add('show');
-  }
+  showCatReaction(good, function() {
+    if (prize.rarity === '神秘') {
+      mysteryImage.src = prize.image;
+      mysteryName.textContent = prize.name;
+      mysteryModal.classList.add('show');
+      spawnParticles();
+      particleTimer = setInterval(spawnParticles, 3000);
+    } else {
+      prizeImage.src = prize.image;
+      prizeName.textContent = prize.name;
+      prizeRarity.textContent = prize.rarity;
+      prizeModal.classList.add('show');
+    }
+  });
 });
 
 // 关闭抽奖弹窗
