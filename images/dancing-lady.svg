@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="dress" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e03060" />
+      <stop offset="50%" style="stop-color:#c02050" />
+      <stop offset="100%" style="stop-color:#901040" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8d8b8" />
+      <stop offset="100%" style="stop-color:#e8c0a0" />
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a1a0a" />
+      <stop offset="100%" style="stop-color:#1a0a00" />
+    </linearGradient>
+  </defs>
+  <!-- 头发 -->
+  <ellipse cx="100" cy="42" rx="14" ry="16" fill="url(#hair)"/>
+  <!-- 头部 -->
+  <ellipse cx="100" cy="45" rx="11" ry="13" fill="url(#skin)"/>
+  <!-- 头发前部 -->
+  <path d="M89,38 Q95,30 100,32 Q105,30 111,38 Q108,35 100,34 Q92,35 89,38" fill="url(#hair)"/>
+  <!-- 颈部 -->
+  <rect x="97" y="56" width="6" height="8" fill="url(#skin)"/>
+  <!-- 身体/连衣裙上身 -->
+  <path d="M88,64 L85,90 L115,90 L112,64 Z" fill="url(#dress)"/>
+  <!-- 裙摆 - 旋转动态 -->
+  <path d="M85,90 Q70,120 60,160 Q80,165 100,162 Q120,165 140,160 Q130,120 115,90 Z" fill="url(#dress)" stroke="#801030" stroke-width="0.5"/>
+  <!-- 裙摆褶皱 -->
+  <path d="M85,90 Q78,120 68,155" fill="none" stroke="#a01840" stroke-width="1" opacity="0.6"/>
+  <path d="M95,90 Q90,125 85,158" fill="none" stroke="#a01840" stroke-width="1" opacity="0.5"/>
+  <path d="M105,90 Q110,125 115,158" fill="none" stroke="#a01840" stroke-width="1" opacity="0.5"/>
+  <path d="M115,90 Q122,120 132,155" fill="none" stroke="#a01840" stroke-width="1" opacity="0.6"/>
+  <!-- 左臂 - 举起 -->
+  <path d="M88,68 Q70,55 60,40" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+  <!-- 右臂 - 侧展 -->
+  <path d="M112,68 Q130,60 145,65" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+  <!-- 手 -->
+  <circle cx="58" cy="38" r="4" fill="url(#skin)"/>
+  <circle cx="147" cy="65" r="4" fill="url(#skin)"/>
+  <!-- 裙摆亮片装饰 -->
+  <circle cx="80" cy="120" r="2" fill="#f0c040" opacity="0.7"/>
+  <circle cx="100" cy="130" r="2" fill="#f0c040" opacity="0.6"/>
+  <circle cx="120" cy="115" r="2" fill="#f0c040" opacity="0.7"/>
+  <circle cx="90" cy="145" r="1.5" fill="#f0c040" opacity="0.5"/>
+  <circle cx="110" cy="140" r="1.5" fill="#f0c040" opacity="0.5"/>
+  <!-- 底座 -->
+  <ellipse cx="100" cy="168" rx="30" ry="6" fill="#3a2a1a" opacity="0.6"/>
+</svg>
