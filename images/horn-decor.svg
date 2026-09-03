@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="horn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f0e0" />
+      <stop offset="40%" style="stop-color:#e8dcc0" />
+      <stop offset="100%" style="stop-color:#c0a878" />
+    </linearGradient>
+    <linearGradient id="skull" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f4e8" />
+      <stop offset="100%" style="stop-color:#d8ccb0" />
+    </linearGradient>
+    <radialGradient id="eye" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2a1a0a" />
+      <stop offset="100%" style="stop-color:#4a3020" />
+    </radialGradient>
+  </defs>
+  <!-- 左角 -->
+  <path d="M60,95 Q30,60 25,30 Q28,28 32,32 Q40,55 68,88" fill="url(#horn)" stroke="#b09868" stroke-width="1"/>
+  <!-- 右角 -->
+  <path d="M140,95 Q170,60 175,30 Q172,28 168,32 Q160,55 132,88" fill="url(#horn)" stroke="#b09868" stroke-width="1"/>
+  <!-- 角纹理 -->
+  <path d="M45,70 Q38,50 33,35" fill="none" stroke="#c8b088" stroke-width="0.8" opacity="0.5"/>
+  <path d="M155,70 Q162,50 167,35" fill="none" stroke="#c8b088" stroke-width="0.8" opacity="0.5"/>
+  <!-- 头骨主体 -->
+  <ellipse cx="100" cy="105" rx="42" ry="35" fill="url(#skull)" stroke="#b09868" stroke-width="1"/>
+  <!-- 额头 -->
+  <ellipse cx="100" cy="85" rx="35" ry="20" fill="url(#skull)" stroke="#b09868" stroke-width="0.8"/>
+  <!-- 眼窝 -->
+  <ellipse cx="82" cy="100" rx="12" ry="14" fill="url(#eye)"/>
+  <ellipse cx="118" cy="100" rx="12" ry="14" fill="url(#eye)"/>
+  <!-- 鼻梁 -->
+  <path d="M95,110 L100,130 L105,110" fill="none" stroke="#b09868" stroke-width="1.5"/>
+  <!-- 鼻孔 -->
+  <ellipse cx="96" cy="128" rx="4" ry="3" fill="#4a3020"/>
+  <ellipse cx="104" cy="128" rx="4" ry="3" fill="#4a3020"/>
+  <!-- 牙齿 -->
+  <rect x="88" y="135" width="6" height="10" rx="2" fill="#f0e8d8" stroke="#c0a878" stroke-width="0.5"/>
+  <rect x="97" y="135" width="6" height="12" rx="2" fill="#f0e8d8" stroke="#c0a878" stroke-width="0.5"/>
+  <rect x="106" y="135" width="6" height="10" rx="2" fill="#f0e8d8" stroke="#c0a878" stroke-width="0.5"/>
+  <!-- 装饰纹样 -->
+  <circle cx="100" cy="75" r="3" fill="none" stroke="#c8a050" stroke-width="1"/>
+  <line x1="85" y1="78" x2="78" y2="82" stroke="#c8a050" stroke-width="0.8"/>
+  <line x1="115" y1="78" x2="122" y2="82" stroke="#c8a050" stroke-width="0.8"/>
+</svg>
