@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="50%" stop-color="#c0c0c0"/>
+      <stop offset="100%" stop-color="#909090"/>
+    </linearGradient>
+    <radialGradient id="redGem" cx="0.35" cy="0.3">
+      <stop offset="0%" stop-color="#ff4444"/>
+      <stop offset="100%" stop-color="#8b0000"/>
+    </radialGradient>
+  </defs>
+  <!-- Hook -->
+  <path d="M140 30 Q155 25 160 35 Q165 45 155 50" fill="none" stroke="#a0a0a0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Top connector -->
+  <circle cx="140" cy="35" r="3" fill="#c0c0c0" stroke="#909090" stroke-width="1"/>
+  <!-- Main triangular frame -->
+  <polygon points="100,60 140,100 60,100" fill="none" stroke="url(#silver)" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Inner triangle detail -->
+  <polygon points="100,72 128,96 72,96" fill="none" stroke="#d0d0d0" stroke-width="2"/>
+  <!-- Red gem in center -->
+  <circle cx="100" cy="88" r="10" fill="url(#redGem)" stroke="#c0c0c0" stroke-width="2"/>
+  <circle cx="97" cy="85" r="3" fill="#ff8888" opacity="0.5"/>
+  <!-- Circular pendants -->
+  <!-- Left pendant -->
+  <line x1="65" y1="100" x2="45" y2="130" stroke="#c0c0c0" stroke-width="2.5"/>
+  <circle cx="40" cy="138" r="16" fill="url(#silver)" stroke="#909090" stroke-width="2"/>
+  <circle cx="40" cy="138" r="10" fill="none" stroke="#d0d0d0" stroke-width="1.5"/>
+  <circle cx="40" cy="138" r="4" fill="#e0e0e0"/>
+  <!-- Right pendant -->
+  <line x1="135" y1="100" x2="155" y2="130" stroke="#c0c0c0" stroke-width="2.5"/>
+  <circle cx="160" cy="138" r="16" fill="url(#silver)" stroke="#909090" stroke-width="2"/>
+  <circle cx="160" cy="138" r="10" fill="none" stroke="#d0d0d0" stroke-width="1.5"/>
+  <circle cx="160" cy="138" r="4" fill="#e0e0e0"/>
+  <!-- Bottom pendant -->
+  <line x1="100" y1="100" x2="100" y2="130" stroke="#c0c0c0" stroke-width="2.5"/>
+  <circle cx="100" cy="145" r="14" fill="url(#silver)" stroke="#909090" stroke-width="2"/>
+  <circle cx="100" cy="145" r="8" fill="none" stroke="#d0d0d0" stroke-width="1.5"/>
+  <circle cx="100" cy="145" r="3.5" fill="#e0e0e0"/>
+  <!-- Decorative circles on frame corners -->
+  <circle cx="100" cy="60" r="5" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="1.5"/>
+  <circle cx="60" cy="100" r="5" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="1.5"/>
+  <circle cx="140" cy="100" r="5" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="1.5"/>
+  <!-- Small bead details -->
+  <circle cx="80" cy="80" r="3" fill="#d0d0d0"/>
+  <circle cx="120" cy="80" r="3" fill="#d0d0d0"/>
+  <circle cx="100" cy="100" r="3" fill="#d0d0d0"/>
+</svg>
