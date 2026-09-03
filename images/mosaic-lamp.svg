@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="lampbase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a050" />
+      <stop offset="50%" style="stop-color:#a07830" />
+      <stop offset="100%" style="stop-color:#806020" />
+    </linearGradient>
+    <radialGradient id="moonglow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#fff8e0;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#f0d870;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#c8a030;stop-opacity:0.3" />
+    </radialGradient>
+    <linearGradient id="mosaic1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2080c0" />
+      <stop offset="100%" style="stop-color:#105080" />
+    </linearGradient>
+    <linearGradient id="mosaic2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c04020" />
+      <stop offset="100%" style="stop-color:#802010" />
+    </linearGradient>
+    <linearGradient id="mosaic3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#20a060" />
+      <stop offset="100%" style="stop-color:#106030" />
+    </linearGradient>
+  </defs>
+  <!-- 灯柱 -->
+  <rect x="94" y="120" width="12" height="50" rx="2" fill="url(#lampbase)" stroke="#705020" stroke-width="1"/>
+  <!-- 底座 -->
+  <ellipse cx="100" cy="172" rx="28" ry="8" fill="url(#lampbase)" stroke="#705020" stroke-width="1"/>
+  <ellipse cx="100" cy="168" rx="22" ry="5" fill="#c8a050"/>
+  <!-- 月牙灯罩 -->
+  <path d="M100,30 Q140,40 150,80 Q155,110 130,120 L100,120 Q120,105 118,80 Q115,50 100,30 Z" fill="url(#moonglow)" stroke="#c8a050" stroke-width="1.5"/>
+  <!-- 马赛克装饰 -->
+  <rect x="120" y="55" width="8" height="8" rx="1" fill="url(#mosaic1)" opacity="0.8"/>
+  <rect x="130" y="65" width="8" height="8" rx="1" fill="url(#mosaic2)" opacity="0.8"/>
+  <rect x="135" y="78" width="8" height="8" rx="1" fill="url(#mosaic3)" opacity="0.8"/>
+  <rect x="137" y="92" width="8" height="8" rx="1" fill="url(#mosaic1)" opacity="0.8"/>
+  <rect x="133" y="105" width="8" height="8" rx="1" fill="url(#mosaic2)" opacity="0.8"/>
+  <rect x="124" y="113" width="7" height="7" rx="1" fill="url(#mosaic3)" opacity="0.8"/>
+  <rect x="112" y="48" width="7" height="7" rx="1" fill="url(#mosaic2)" opacity="0.7"/>
+  <rect x="125" y="42" width="6" height="6" rx="1" fill="url(#mosaic3)" opacity="0.7"/>
+  <!-- 光芒 -->
+  <circle cx="115" cy="70" r="2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="128" cy="85" r="2" fill="#ffffff" opacity="0.5"/>
+  <circle cx="125" cy="100" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <!-- 月牙内侧暗部 -->
+  <path d="M100,35 Q115,50 116,80 Q117,105 100,118" fill="none" stroke="#e8c850" stroke-width="1" opacity="0.5"/>
+</svg>
