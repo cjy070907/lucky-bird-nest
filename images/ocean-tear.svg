@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="pearl" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" style="stop-color:#e0f0ff;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#80d0e8;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#40a0c0;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#206080;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#402060;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#201040;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="shine" cx="35%" cy="30%" r="25%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <!-- 珍珠主体 -->
+  <circle cx="100" cy="100" r="70" fill="url(#pearl)"/>
+  <!-- 虹彩效果 -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#pearl)" stroke-width="2" opacity="0.5"/>
+  <ellipse cx="85" cy="75" rx="20" ry="15" fill="url(#shine)"/>
+  <!-- 闪光点 -->
+  <circle cx="75" cy="70" r="3" fill="#ffffff" opacity="0.9"/>
+  <circle cx="90" cy="65" r="2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="80" cy="80" r="2" fill="#ffffff" opacity="0.6"/>
+</svg>
