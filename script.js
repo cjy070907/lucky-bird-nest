@@ -132,7 +132,7 @@ function showCatReaction(isGood) {
     setTimeout(function() {
       catReaction.classList.remove('show', 'fade-out');
     }, 300);
-  }, 1500);
+  }, 800);
 }
 
 // 鸟窝选择
