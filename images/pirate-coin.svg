@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="coin" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" style="stop-color:#f0f0f0" />
+      <stop offset="30%" style="stop-color:#d8d8d8" />
+      <stop offset="70%" style="stop-color:#b0b0b0" />
+      <stop offset="100%" style="stop-color:#808080" />
+    </radialGradient>
+    <radialGradient id="sunface" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e8e0c0" />
+      <stop offset="100%" style="stop-color:#c0b090" />
+    </radialGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0" />
+      <stop offset="50%" style="stop-color:#909090" />
+      <stop offset="100%" style="stop-color:#a0a0a0" />
+    </linearGradient>
+  </defs>
+  <!-- 硬币外圈 -->
+  <circle cx="100" cy="100" r="80" fill="url(#rim)" stroke="#707070" stroke-width="2"/>
+  <!-- 硬币内面 -->
+  <circle cx="100" cy="100" r="72" fill="url(#coin)" stroke="#909090" stroke-width="1"/>
+  <!-- 齿纹边缘 -->
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#a0a0a0" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- 太阳脸主体 -->
+  <circle cx="100" cy="95" r="30" fill="url(#sunface)" stroke="#a09060" stroke-width="1"/>
+  <!-- 眼睛 -->
+  <ellipse cx="90" cy="90" rx="5" ry="6" fill="#4a3a2a"/>
+  <ellipse cx="110" cy="90" rx="5" ry="6" fill="#4a3a2a"/>
+  <circle cx="88" cy="88" r="2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="108" cy="88" r="2" fill="#ffffff" opacity="0.6"/>
+  <!-- 鼻子 -->
+  <ellipse cx="100" cy="98" rx="3" ry="4" fill="#b0a080" opacity="0.6"/>
+  <!-- 嘴巴 -->
+  <path d="M90,106 Q100,114 110,106" fill="none" stroke="#6a5a4a" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 太阳光芒 -->
+  <line x1="100" y1="58" x2="100" y2="48" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="62" x2="126" y2="54" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="62" x2="74" y2="54" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="134" y1="75" x2="142" y2="70" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="66" y1="75" x2="58" y2="70" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="138" y1="95" x2="148" y2="95" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="62" y1="95" x2="52" y2="95" stroke="#c8b060" stroke-width="2" stroke-linecap="round"/>
+  <line x1="134" y1="115" x2="142" y2="120" stroke="#c8b060" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="66" y1="115" x2="58" y2="120" stroke="#c8b060" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 波浪纹装饰 -->
+  <path d="M55,135 Q65,130 75,135 Q85,140 95,135 Q105,130 115,135 Q125,140 135,135 Q145,130 150,135" fill="none" stroke="#a0a0a0" stroke-width="1" opacity="0.5"/>
+  <path d="M55,145 Q65,140 75,145 Q85,150 95,145 Q105,140 115,145 Q125,150 135,145 Q145,140 150,145" fill="none" stroke="#a0a0a0" stroke-width="1" opacity="0.4"/>
+  <!-- 文字区域 -->
+  <text x="100" y="162" text-anchor="middle" font-size="10" fill="#808080" font-family="serif">PIRATE SILVER</text>
+</svg>
