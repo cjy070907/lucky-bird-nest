@@ -1,0 +1,1163 @@
+/* ===== 基础重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", sans-serif;
+  background: #0a0e1a;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== 页面容器 ===== */
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 深色渐变背景，模拟昏暗房间氛围 */
+  background:
+    radial-gradient(ellipse at 50% 40%, #1a1f35 0%, #0d1120 40%, #070a14 100%);
+}
+
+/* 背景暗角叠加 */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== 顶部标题区 ===== */
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 960px;
+  padding: 30px 24px 10px;
+  text-align: left;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #f0ece4;
+  text-shadow: 0 0 20px rgba(255,255,255,0.15);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.help-icon:hover {
+  border-color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.8);
+}
+
+/* ===== 鸟窝区域 ===== */
+.nests-area {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 960px;
+  padding: 20px 24px 40px;
+}
+
+.nests-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* ===== 鸟窝 ===== */
+.nest {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nest:hover {
+  transform: translateY(-6px);
+}
+
+.nest-center {
+  transform: scale(1.08);
+}
+
+.nest-center:hover {
+  transform: scale(1.08) translateY(-6px);
+}
+
+/* 鸟窝主体 — 模拟深碗状编织巢 */
+.nest-body {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+  background:
+    radial-gradient(ellipse at 50% 90%, #2a1a0e 0%, #1a0e06 60%, #0e0804 100%);
+  box-shadow:
+    0 12px 32px rgba(0,0,0,0.7),
+    0 4px 8px rgba(0,0,0,0.4),
+    inset 0 -12px 24px rgba(0,0,0,0.5),
+    inset 0 6px 12px rgba(80,50,20,0.2);
+  background-image:
+    repeating-linear-gradient(
+      50deg,
+      transparent,
+      transparent 3px,
+      rgba(70,40,18,0.25) 3px,
+      rgba(70,40,18,0.25) 4px
+    ),
+    repeating-linear-gradient(
+      -35deg,
+      transparent,
+      transparent 5px,
+      rgba(55,32,12,0.2) 5px,
+      rgba(55,32,12,0.2) 6px
+    ),
+    repeating-linear-gradient(
+      80deg,
+      transparent,
+      transparent 7px,
+      rgba(65,38,15,0.15) 7px,
+      rgba(65,38,15,0.15) 8px
+    ),
+    radial-gradient(ellipse at 50% 90%, #2a1a0e 0%, #1a0e06 60%, #0e0804 100%);
+}
+
+/* 鸟窝上沿 — 模拟树枝围边 */
+.nest-body::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 5%;
+  right: 5%;
+  height: 24px;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #5a3820 0px, #4a2a14 2px, #6a4228 4px, #3e2210 7px, #5a3820 9px
+    );
+  box-shadow:
+    0 -3px 8px rgba(0,0,0,0.5),
+    0 2px 4px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+
+/* 鸟窝内部凹陷 — 蛋放置的区域 */
+.nest-body::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 15%;
+  right: 15%;
+  bottom: 15%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #120a04 0%, #1e1208 100%);
+  box-shadow: inset 0 6px 16px rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+/* ===== 蛋 ===== */
+.eggs {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3px;
+  width: 150px;
+  z-index: 2;
+  padding-top: 8px;
+}
+
+.egg {
+  width: 30px;
+  height: 38px;
+  border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+  position: relative;
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.5),
+    inset 0 -5px 8px rgba(0,0,0,0.2),
+    inset 0 4px 6px rgba(255,255,255,0.12);
+}
+
+/* 米色蛋 */
+.beige-eggs .egg {
+  background: linear-gradient(160deg, #f0e6d0 0%, #d4c4a0 40%, #b8a880 100%);
+}
+
+/* 白色斑点蛋 */
+.spotted-eggs .egg {
+  background: linear-gradient(160deg, #f5f0ea 0%, #e8e0d4 40%, #d0c8b8 100%);
+}
+
+.spotted-eggs .egg::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 5px;
+  background: #5a4a3a;
+  border-radius: 50%;
+  top: 40%;
+  left: 30%;
+  box-shadow:
+    8px 4px 0 #4a3a2a,
+    -3px 8px 0 #5a4a3a,
+    6px -2px 0 #3a2a1a;
+  opacity: 0.7;
+}
+
+/* 蓝色蛋 */
+.blue-eggs .egg {
+  background: linear-gradient(160deg, #a8d8ea 0%, #6ab0c8 40%, #4a90a8 100%);
+}
+
+/* ===== 提示文字 ===== */
+.hint-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* ===== 按钮 ===== */
+.action-btn {
+  position: relative;
+  padding: 12px 60px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #d4c4a0;
+  background: transparent;
+  border: 1px solid rgba(180,160,120,0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.action-btn:hover {
+  border-color: rgba(200,180,140,0.7);
+  color: #f0e6d0;
+  background: rgba(180,160,120,0.08);
+  box-shadow: 0 0 20px rgba(180,160,120,0.1);
+}
+
+.action-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== 选中态 ===== */
+.nest.selected {
+  outline: 2px solid rgba(200,180,100,0.6);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .nests-row {
+    gap: 16px;
+  }
+
+  .nest-body {
+    width: 180px;
+    height: 120px;
+  }
+
+  .eggs {
+    width: 110px;
+    top: 14px;
+  }
+
+  .egg {
+    width: 24px;
+    height: 30px;
+  }
+
+  .action-btn {
+    padding: 10px 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nests-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nest-center {
+    transform: none;
+  }
+
+  .nest-center:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* ===== 奖品弹窗 ===== */
+.prize-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+.prize-modal.show {
+  display: flex;
+}
+
+.prize-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 60px 30px;
+  background: radial-gradient(ellipse at center, #1a2035 0%, #0d1120 70%);
+  border: 1px solid rgba(200,180,100,0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(200,180,100,0.08);
+  max-width: 420px;
+  width: 90%;
+}
+
+.prize-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,180,100,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.prize-image {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  max-height: 220px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+}
+
+.prize-name {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f0ece4;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.prize-rarity {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  color: rgba(200,180,100,0.7);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.prize-close-btn {
+  position: relative;
+  z-index: 1;
+  padding: 10px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d4c4a0;
+  background: transparent;
+  border: 1px solid rgba(180,160,120,0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.prize-close-btn:hover {
+  border-color: rgba(200,180,140,0.7);
+  color: #f0e6d0;
+  background: rgba(180,160,120,0.08);
+}
+
+/* ===== 奖品列表弹窗 ===== */
+.prize-list-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+.prize-list-modal.show {
+  display: flex;
+}
+
+.prize-list-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px 24px;
+  background: radial-gradient(ellipse at center, #1a2035 0%, #0d1120 70%);
+  border: 1px solid rgba(200,180,100,0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(200,180,100,0.08);
+  max-width: 560px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.prize-list-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0ece4;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.prize-list-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.prize-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.prize-list-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.prize-list-item span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.prize-list-item .rarity-tag {
+  font-size: 11px;
+  padding: 1px 8px;
+  border-radius: 3px;
+  color: #1a1200;
+  font-weight: 600;
+}
+
+.rarity-legend { background: linear-gradient(135deg, #c8a84e, #a07828); }
+.rarity-mystery { background: linear-gradient(135deg, #ff4444, #cc0000); color: #fff; }
+.rarity-epic { background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; }
+.rarity-rare { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; }
+.rarity-common { background: linear-gradient(135deg, #9ca3af, #6b7280); color: #fff; }
+
+.chance-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: -2px;
+}
+
+.prize-list-close-btn {
+  padding: 10px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d4c4a0;
+  background: transparent;
+  border: 1px solid rgba(180,160,120,0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.prize-list-close-btn:hover {
+  border-color: rgba(200,180,140,0.7);
+  color: #f0e6d0;
+  background: rgba(180,160,120,0.08);
+}
+
+@media (max-width: 480px) {
+  .prize-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== 神秘大奖庆祝弹窗 ===== */
+.mystery-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: radial-gradient(ellipse at center, #1a0a0a 0%, #0a0000 60%, #000000 100%);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mystery-modal.show {
+  display: flex;
+}
+
+/* 彩屑容器 */
+.mystery-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mystery-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: -10px;
+  opacity: 0;
+  animation: particleFall linear forwards;
+}
+
+@keyframes particleFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg) scale(0.3);
+  }
+}
+
+/* 庆祝内容区 */
+.mystery-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 60px 40px;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* 爆炸光效 */
+.mystery-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,60,60,0.3) 0%, rgba(200,160,40,0.15) 40%, transparent 70%);
+  animation: burstPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes burstPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* 放射光线 */
+.mystery-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  animation: raysSpin 20s linear infinite;
+}
+
+.mystery-rays::before,
+.mystery-rays::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 200px;
+  transform-origin: top center;
+}
+
+.mystery-rays::before {
+  background: linear-gradient(to bottom, rgba(255,200,60,0.4), transparent);
+  box-shadow:
+    30px 0 0 rgba(255,200,60,0.2),
+    -30px 0 0 rgba(255,200,60,0.2),
+    60px 10px 0 rgba(255,100,60,0.15),
+    -60px 10px 0 rgba(255,100,60,0.15),
+    90px 20px 0 rgba(255,200,60,0.1),
+    -90px 20px 0 rgba(255,200,60,0.1);
+  transform: translate(-50%, 0);
+}
+
+.mystery-rays::after {
+  background: linear-gradient(to bottom, rgba(255,100,60,0.3), transparent);
+  box-shadow:
+    45px 5px 0 rgba(255,200,60,0.15),
+    -45px 5px 0 rgba(255,200,60,0.15),
+    75px 15px 0 rgba(255,100,60,0.1),
+    -75px 15px 0 rgba(255,100,60,0.1);
+  transform: translate(-50%, 0) rotate(30deg);
+}
+
+@keyframes raysSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 恭喜文字 */
+.mystery-congrats {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 20px rgba(255,200,0,0.6),
+    0 0 40px rgba(255,100,0,0.3),
+    0 2px 4px rgba(0,0,0,0.8);
+  margin-bottom: 30px;
+  animation: congratsPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+@keyframes congratsPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 奖品图片 */
+.mystery-image {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(255,200,0,0.5)) drop-shadow(0 0 60px rgba(255,60,60,0.3));
+  animation: mysteryFloat 3s ease-in-out infinite, mysteryAppear 0.8s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+@keyframes mysteryFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes mysteryAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* 奖品名称 */
+.mystery-name {
+  font-size: 32px;
+  font-weight: 900;
+  color: #f0ece4;
+  letter-spacing: 6px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(255,200,0,0.4), 0 2px 4px rgba(0,0,0,0.8);
+  animation: nameSlideUp 0.6s 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes nameSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 神秘标签 */
+.mystery-rarity-tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  padding: 4px 20px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(255,60,60,0.4);
+  animation: nameSlideUp 0.6s 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* 关闭按钮 */
+.mystery-close-btn {
+  padding: 12px 56px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #1a0a00;
+  background: linear-gradient(135deg, #ffd700, #f0a020);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 20px rgba(255,200,0,0.4);
+  transition: all 0.3s ease;
+  animation: nameSlideUp 0.6s 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mystery-close-btn:hover {
+  background: linear-gradient(135deg, #ffe040, #f0b030);
+  box-shadow: 0 4px 30px rgba(255,200,0,0.6);
+  transform: translateY(-2px);
+}
+
+.mystery-close-btn:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 480px) {
+  .mystery-congrats {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .mystery-name {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  .mystery-content {
+    padding: 30px 24px 24px;
+  }
+}
+
+/* ===== 音量控制 ===== */
+.volume-control {
+  position: absolute;
+  top: 30px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.volume-icon {
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.volume-icon:hover {
+  transform: scale(1.15);
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d4c4a0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  background: #f0e6d0;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d4c4a0;
+  cursor: pointer;
+  border: none;
+}
+
+/* ===== 猫咪反应 overlay ===== */
+.cat-reaction {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.cat-reaction.show {
+  display: flex;
+}
+
+.cat-reaction-inner {
+  animation: catBounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cat-reaction-inner svg {
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+}
+
+@keyframes catBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes catFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.cat-reaction.fade-out .cat-reaction-inner {
+  animation: catFadeOut 0.3s ease forwards;
+}
+
+@media (max-width: 480px) {
+  .volume-control {
+    top: 16px;
+    right: 12px;
+  }
+
+  .volume-slider {
+    width: 60px;
+  }
+}
+
+/* ===== 保底计数器 ===== */
+.pity-counter {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 16px 0;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.pity-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.pity-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pity-value {
+  color: #ffd700;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== 历史记录图标 ===== */
+.history-icon {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+/* ===== 抽奖历史弹窗 ===== */
+.history-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.history-modal.show {
+  display: flex;
+}
+
+.history-content {
+  background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.history-title {
+  text-align: center;
+  color: #ffd700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.history-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.history-list {
+  margin-bottom: 20px;
+}
+
+.history-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.history-item-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.history-item-info {
+  flex: 1;
+}
+
+.history-item-name {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.history-item-rarity {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+
+.history-item-rarity.rarity-mystery {
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  color: #fff;
+}
+
+.history-item-rarity.rarity-legend {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: #2d1b4e;
+}
+
+.history-item-rarity.rarity-epic {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: #fff;
+}
+
+.history-item-rarity.rarity-rare {
+  background: linear-gradient(135deg, #9370db, #6a5acd);
+  color: #fff;
+}
+
+.history-item-rarity.rarity-common {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.history-item-num {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+}
+
+.history-close-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6a5acd, #9370db);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.history-close-btn:hover {
+  background: linear-gradient(135deg, #7b68ee, #a082e8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(106, 90, 205, 0.4);
+}
+
+@media (max-width: 480px) {
+  .pity-counter {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+
+  .pity-item {
+    font-size: 12px;
+  }
+
+  .history-content {
+    padding: 24px 20px;
+  }
+
+  .history-title {
+    font-size: 20px;
+  }
+}
