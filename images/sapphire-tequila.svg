@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bottleBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a90b8"/>
+      <stop offset="50%" stop-color="#2a6090"/>
+      <stop offset="100%" stop-color="#1a4060"/>
+    </linearGradient>
+    <linearGradient id="bottleGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe080"/>
+      <stop offset="100%" stop-color="#c8960a"/>
+    </linearGradient>
+  </defs>
+  <!-- Bottle body -->
+  <path d="M80 170 Q75 140 82 110 L85 90 L85 75 Q85 65 90 62 L90 55 Q90 48 95 45 L95 40 Q95 35 100 32 Q105 35 105 40 L105 45 Q110 48 110 55 L110 62 Q115 65 115 75 L115 90 L118 110 Q125 140 120 170 Z" fill="url(#bottleBlue)" stroke="#1a3050" stroke-width="1.5"/>
+  <!-- Bottle neck highlight -->
+  <path d="M92 55 L92 75" stroke="#6ab0d8" stroke-width="2" opacity="0.5"/>
+  <!-- Bottle body highlight -->
+  <path d="M88 100 Q86 130 90 160" stroke="#6ab0d8" stroke-width="2" opacity="0.4"/>
+  <!-- Gold cap/top decoration -->
+  <path d="M93 40 Q93 30 100 25 Q107 30 107 40" fill="url(#bottleGold)" stroke="#8B6914" stroke-width="1"/>
+  <!-- Gold leaf/plume on top -->
+  <path d="M100 25 Q95 15 90 10" fill="none" stroke="#d4a020" stroke-width="2" stroke-linecap="round"/>
+  <path d="M100 25 Q105 12 108 8" fill="none" stroke="#d4a020" stroke-width="2" stroke-linecap="round"/>
+  <path d="M100 25 Q100 10 100 5" fill="none" stroke="#d4a020" stroke-width="2" stroke-linecap="round"/>
+  <!-- Small leaves on plume -->
+  <ellipse cx="88" cy="12" rx="5" ry="3" fill="#d4a020" transform="rotate(-30 88 12)"/>
+  <ellipse cx="110" cy="10" rx="5" ry="3" fill="#d4a020" transform="rotate(25 110 10)"/>
+  <ellipse cx="100" cy="7" rx="4" ry="3" fill="#d4a020"/>
+  <!-- Gold band around neck -->
+  <ellipse cx="100" cy="62" rx="12" ry="4" fill="url(#bottleGold)" stroke="#8B6914" stroke-width="1"/>
+  <!-- Label area -->
+  <rect x="88" y="110" width="24" height="30" rx="2" fill="#1a3050" opacity="0.5"/>
+  <!-- Sapphire gem on label -->
+  <polygon points="100,118 106,124 103,132 97,132 94,124" fill="#4488cc" stroke="#88bbdd" stroke-width="1"/>
+  <polygon points="100,120 103,124 101,129 99,129 97,124" fill="#66aadd" opacity="0.5"/>
+  <!-- Bottom base -->
+  <ellipse cx="100" cy="170" rx="22" ry="6" fill="#1a4060" stroke="#0d2030" stroke-width="1"/>
+  <!-- Bottle shine -->
+  <ellipse cx="92" cy="130" rx="4" ry="15" fill="#6ab0d8" opacity="0.2"/>
+</svg>
