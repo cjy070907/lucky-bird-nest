@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="brass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c860" />
+      <stop offset="30%" style="stop-color:#c8a030" />
+      <stop offset="70%" style="stop-color:#a08020" />
+      <stop offset="100%" style="stop-color:#806010" />
+    </linearGradient>
+    <linearGradient id="brass2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d8b850" />
+      <stop offset="100%" style="stop-color:#907020" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a0d8f0;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#60a0c0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#408098;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  <!-- 望远镜主体 - 倾斜放置 -->
+  <g transform="rotate(-30, 100, 100)">
+    <!-- 主筒 -->
+    <rect x="40" y="85" width="120" height="30" rx="4" fill="url(#brass)" stroke="#705010" stroke-width="1"/>
+    <!-- 前段粗筒 -->
+    <rect x="130" y="78" width="40" height="44" rx="6" fill="url(#brass2)" stroke="#705010" stroke-width="1"/>
+    <!-- 前段装饰环 -->
+    <rect x="135" y="78" width="5" height="44" rx="1" fill="#c8a030" stroke="#907020" stroke-width="0.5"/>
+    <rect x="155" y="78" width="5" height="44" rx="1" fill="#c8a030" stroke="#907020" stroke-width="0.5"/>
+    <!-- 物镜 -->
+    <ellipse cx="170" cy="100" rx="6" ry="20" fill="url(#lens)" stroke="#607080" stroke-width="1"/>
+    <!-- 后段细筒 -->
+    <rect x="25" y="90" width="20" height="20" rx="3" fill="url(#brass2)" stroke="#705010" stroke-width="1"/>
+    <!-- 目镜 -->
+    <ellipse cx="25" cy="100" rx="4" ry="12" fill="#2a2a2a" stroke="#404040" stroke-width="1"/>
+    <!-- 筒身装饰环 -->
+    <rect x="70" y="85" width="4" height="30" rx="1" fill="#d8b850" stroke="#a08020" stroke-width="0.5"/>
+    <rect x="100" y="85" width="4" height="30" rx="1" fill="#d8b850" stroke="#a08020" stroke-width="0.5"/>
+    <!-- 高光 -->
+    <rect x="45" y="88" width="110" height="4" rx="2" fill="#ffffff" opacity="0.2"/>
+    <rect x="132" y="82" width="35" height="3" rx="1" fill="#ffffff" opacity="0.15"/>
+  </g>
+  <!-- 三脚架 -->
+  <line x1="100" y1="120" x2="70" y2="180" stroke="#5a4a3a" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="120" x2="100" y2="185" stroke="#5a4a3a" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="120" x2="130" y2="180" stroke="#5a4a3a" stroke-width="3" stroke-linecap="round"/>
+  <!-- 三脚架连接处 -->
+  <circle cx="100" cy="120" r="5" fill="#6a5a4a" stroke="#4a3a2a" stroke-width="1"/>
+</svg>
