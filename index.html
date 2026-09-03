@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>幸运鸟窝</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- 背景装饰 -->
+    <div class="bg-overlay"></div>
+
+    <!-- 顶部标题区 -->
+    <header class="header">
+      <h1 class="title">幸运鸟窝</h1>
+      <p class="subtitle">
+        每日搜寻鸟窝，好礼特惠不停！
+        <span class="help-icon" id="helpIcon" title="本期奖品">?</span>
+        <span class="help-icon history-icon" id="historyIcon" title="抽奖记录">&#x1f4dc;</span>
+      </p>
+      <!-- 音量控制 -->
+      <div class="volume-control" id="volumeControl">
+        <span class="volume-icon" id="volumeIcon">🔊</span>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+      </div>
+    </header>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="music/bg-music.wav" type="audio/wav">
+    </audio>
+
+    <!-- 鸟窝区域 -->
+    <main class="nests-area">
+      <div class="nests-row">
+        <!-- 鸟窝1：米色蛋 -->
+        <div class="nest" data-type="beige">
+          <div class="nest-body">
+            <div class="eggs beige-eggs">
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 鸟窝2：白色斑点蛋 -->
+        <div class="nest nest-center" data-type="spotted">
+          <div class="nest-body">
+            <div class="eggs spotted-eggs">
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 鸟窝3：蓝色蛋 -->
+        <div class="nest" data-type="blue">
+          <div class="nest-body">
+            <div class="eggs blue-eggs">
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+              <div class="egg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="hint-text">请选择一个鸟窝，点击进行探寻</p>
+
+      <!-- 保底计数器 -->
+      <div class="pity-counter" id="pityCounter">
+        <div class="pity-item">
+          <span class="pity-label">传说保底：</span>
+          <span class="pity-value" id="legendPity">0/50</span>
+        </div>
+        <div class="pity-item">
+          <span class="pity-label">神秘保底：</span>
+          <span class="pity-value" id="mysteryPity">0/100</span>
+        </div>
+      </div>
+
+      <button class="action-btn" id="exploreBtn">掏鸟窝</button>
+    </main>
+
+    <!-- 奖品弹窗 -->
+    <div class="prize-modal" id="prizeModal">
+      <div class="prize-modal-content">
+        <div class="prize-glow"></div>
+        <img class="prize-image" id="prizeImage" src="" alt="奖品">
+        <h2 class="prize-name" id="prizeName"></h2>
+        <p class="prize-rarity" id="prizeRarity"></p>
+        <button class="prize-close-btn" id="prizeCloseBtn">收下奖品</button>
+      </div>
+    </div>
+
+    <!-- 本期奖品列表弹窗 -->
+    <div class="prize-list-modal" id="prizeListModal">
+      <div class="prize-list-content">
+        <h2 class="prize-list-title">本期奖品</h2>
+        <div class="prize-list-grid" id="prizeListGrid"></div>
+        <button class="prize-list-close-btn" id="prizeListCloseBtn">关闭</button>
+      </div>
+    </div>
+
+    <!-- 神秘大奖庆祝弹窗 -->
+    <div class="mystery-modal" id="mysteryModal">
+      <div class="mystery-particles" id="mysteryParticles"></div>
+      <div class="mystery-content">
+        <div class="mystery-burst"></div>
+        <div class="mystery-rays"></div>
+        <h2 class="mystery-congrats">恭喜获得神秘大奖！</h2>
+        <img class="mystery-image" id="mysteryImage" src="" alt="神秘大奖">
+        <h3 class="mystery-name" id="mysteryName"></h3>
+        <p class="mystery-rarity-tag">神 秘</p>
+        <button class="mystery-close-btn" id="mysteryCloseBtn">收下大奖</button>
+      </div>
+    </div>
+    <!-- 抽奖历史记录弹窗 -->
+    <div class="history-modal" id="historyModal">
+      <div class="history-content">
+        <h2 class="history-title">抽奖记录</h2>
+        <div class="history-stats" id="historyStats"></div>
+        <div class="history-list" id="historyList">
+          <p class="history-empty">暂无记录，快去掏鸟窝吧！</p>
+        </div>
+        <button class="history-close-btn" id="historyCloseBtn">关闭</button>
+      </div>
+    </div>
+
+    <!-- 猫咪反应 overlay -->
+    <div class="cat-reaction" id="catReaction">
+      <div class="cat-reaction-inner" id="catReactionInner"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
