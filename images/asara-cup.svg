@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="cupGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe080"/>
+      <stop offset="50%" stop-color="#d4a020"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="cupWhite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff8f0"/>
+      <stop offset="100%" stop-color="#f0e8d8"/>
+    </linearGradient>
+    <radialGradient id="gemRed" cx="0.4" cy="0.35">
+      <stop offset="0%" stop-color="#ff4444"/>
+      <stop offset="100%" stop-color="#8b0000"/>
+    </radialGradient>
+  </defs>
+  <!-- Cup body -->
+  <path d="M55 60 L50 140 Q50 160 70 165 L130 165 Q150 160 150 140 L145 60 Z" fill="url(#cupWhite)" stroke="url(#cupGold)" stroke-width="3"/>
+  <!-- Gold rim top -->
+  <ellipse cx="100" cy="60" rx="47" ry="10" fill="url(#cupGold)"/>
+  <ellipse cx="100" cy="60" rx="40" ry="7" fill="#3a2010"/>
+  <!-- Gold decorative band -->
+  <path d="M52 100 Q100 115 148 100" fill="none" stroke="url(#cupGold)" stroke-width="4"/>
+  <path d="M51 108 Q100 123 149 108" fill="none" stroke="url(#cupGold)" stroke-width="2"/>
+  <!-- Red gem in center -->
+  <ellipse cx="100" cy="105" rx="14" ry="12" fill="url(#gemRed)" stroke="#d4a020" stroke-width="2"/>
+  <ellipse cx="96" cy="100" rx="5" ry="3" fill="#ff8888" opacity="0.6"/>
+  <!-- Gold scrollwork around gem -->
+  <path d="M78 105 Q85 95 86 105" fill="none" stroke="#d4a020" stroke-width="2"/>
+  <path d="M122 105 Q115 95 114 105" fill="none" stroke="#d4a020" stroke-width="2"/>
+  <!-- Handle -->
+  <path d="M148 75 C175 75 180 100 175 120 C170 135 155 135 148 125" fill="none" stroke="url(#cupGold)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M148 80 C168 80 172 100 168 118 C164 130 155 130 148 122" fill="none" stroke="#fff8f0" stroke-width="2"/>
+  <!-- Base -->
+  <ellipse cx="100" cy="165" rx="35" ry="8" fill="url(#cupGold)"/>
+  <ellipse cx="100" cy="168" rx="28" ry="5" fill="#b8860b"/>
+  <!-- Decorative triangles on base -->
+  <polygon points="75,162 80,155 85,162" fill="#d4a020"/>
+  <polygon points="90,162 95,155 100,162" fill="#d4a020"/>
+  <polygon points="105,162 110,155 115,162" fill="#d4a020"/>
+  <polygon points="120,162 125,155 130,162" fill="#d4a020"/>
+  <!-- Small gold rosette -->
+  <circle cx="130" cy="105" r="6" fill="#d4a020"/>
+  <circle cx="130" cy="105" r="3" fill="#ffe080"/>
+</svg>
